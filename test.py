@@ -1,7 +1,7 @@
 import json
 import time
    
-with open("list2.json", encoding="utf8") as jsonFile:
+with open("list.json", encoding="utf8") as jsonFile:
     data = json.load(jsonFile)
     jsonFile.close()
 
@@ -14,7 +14,7 @@ def search():
     for i in data:
         if (keyword) in i["title"].lower():
             countsearch = countsearch +1
-            print(i['title'])
+            
     endtime = time.time()    
     print(keyword + " appeared " + str(countsearch) + " times")        
     print("Took " + str(endtime-starttime) + " seconds")
