@@ -5,10 +5,11 @@ with open("list.json", encoding="utf8") as jsonFile:
     data = json.load(jsonFile)
     jsonFile.close()
 
-
+def listall():
+    for i in data:
+        print(i['title'])
 def search():
-    print("Enter the keyword: ")
-    keyword = input()
+    keyword = input("Enter the keyword: ")
     starttime = time.time()
     countsearch = 0
     for i in data:
@@ -21,9 +22,10 @@ def search():
 
 go = True
 while (go):
-    print("Enter your command: ")
-    command = input()
+    command = input("Enter your command: ")
     if (command == "search"):
         search()
+    elif (command == "listall"):
+        listall()
     else:
         go = False
